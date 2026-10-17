@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R.N Readymade | Premium Fashion — Birgunj, Nepal</title>
+    <meta name="description" content="R.N Readymade — premium readymade fashion for men, women & children in Birgunj. Shop latest arrivals, best sellers & exclusive collections. Free delivery over Rs. 5,000.">
+    <meta name="keywords" content="R.N Readymade, fashion, Birgunj, Nepal, clothing, men, women, kids, readymade">
+    <meta name="author" content="R.N Readymade">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://rnreadymade.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="R.N Readymade | Premium Fashion">
+    <meta property="og:description" content="Discover premium readymade fashion at R.N Readymade, Birgunj. Men, Women & Kids collections.">
+    <meta property="og:url" content="https://rnreadymade.com/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200">
+    <meta property="og:locale" content="en_NP">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="premium.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ClothingStore",
+        "name": "R.N Readymade",
+        "description": "Premium readymade fashion store in Birgunj, Nepal",
+        "url": "https://rnreadymade.com",
+        "telephone": "+977-9845266990",
+        "email": "support@rnreadymade.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Main Road Ghantaghar",
+            "addressLocality": "Birgunj",
+            "addressRegion": "Parsa",
+            "postalCode": "44300",
+            "addressCountry": "NP"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+            "opens": "10:00",
+            "closes": "20:00"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Page Loader -->
+    <div class="page-loader" aria-hidden="true">
+        <div class="loader-brand">R.N</div>
+        <div class="loader-bar"><span></span></div>
+        <p class="loader-text">Curating your style...</p>
+    </div>
+    <!-- Failsafe: always hide loader after 3s even if JS errors occur -->
+    <script>
+        (function() {
+            function hideLoader() {
+                var l = document.querySelector('.page-loader');
+                if (l) { l.classList.add('loaded'); setTimeout(function(){ if(l.parentNode) l.parentNode.removeChild(l); }, 600); }
+            }
+            window.addEventListener('load', hideLoader);
+            setTimeout(hideLoader, 3000);
+        })();
+    </script>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner" role="banner">
+        <p><i class="fa-solid fa-truck-fast"></i> <span data-i18n="freeShipping">Free shipping on orders over Rs. 5,000</span> &nbsp;|&nbsp; Use code <strong>RNWELCOME10</strong> for 10% off</p>
+        <button class="promo-banner-close" type="button" aria-label="Dismiss banner">&times;</button>
+    </div>
+
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="#" class="logo" aria-label="R.N Readymade Home">R.N <span>Readymade</span></a>
+        <ul class="nav-links">
+            <li><a href="#" data-i18n="home">Home</a></li>
+            <li><a href="#men" data-i18n="men">Men</a></li>
+            <li><a href="#women" data-i18n="women">Women</a></li>
+            <li><a href="#collections" data-i18n="collections">Collections</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-search">
+            <input class="search-input" type="search" placeholder="Search fashion..." data-i18n="searchPlaceholder" aria-label="Search products" autocomplete="off">
+            <button class="search-btn" type="button" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="filter-btn" type="button" aria-label="Open filters"><i class="fa-solid fa-sliders"></i></button>
+        </div>
+        <div class="nav-actions">
+            <button class="icon-btn lang-toggle" type="button" aria-label="Switch language">ने</button>
+            <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode"><i class="fa-solid fa-moon"></i></button>
+            <button class="icon-btn nav-wishlist-trigger" type="button" aria-label="Wishlist" title="My Wishlist">
+                <i class="fa-regular fa-heart"></i><span class="wishlist-count">0</span>
+            </button>
+            <button class="icon-btn nav-orders-trigger" type="button" aria-label="My Orders" title="My Orders">
+                <i class="fa-solid fa-box"></i><span class="orders-count">0</span>
+            </button>
+            <div class="nav-notif-wrap">
+                <button class="icon-btn nav-notifications-trigger" type="button" aria-label="Notifications" title="Notifications">
+                    <i class="fa-regular fa-bell"></i><span class="notif-badge">3</span>
+                </button>
+                <div class="notification-popover" id="notificationPopover">
+                    <div class="notif-pop-header">
+                        <span><i class="fa-solid fa-bell"></i> Updates</span>
+                        <small style="color:var(--color-accent);cursor:pointer;" onclick="document.querySelectorAll('.notif-pop-item').forEach(el=>el.classList.replace('unread','read'))">Mark all read</small>
+                    </div>
+                    <div class="notif-pop-list" id="notificationPopList"></div>
+                </div>
+            </div>
+        </div>
+        <div class="auth-area">
+            <button class="auth-open-btn" type="button" data-i18n="signUp">Sign In</button>
+            <div class="user-menu is-hidden">
+                <button class="nav-avatar-pill" type="button" onclick="RN.openProfileModal()" title="View Profile & Settings">
+                    <span class="avatar-initials">U</span>
+                    <span class="nav-user-label user-name">Profile</span>
+                </button>
+                <button class="logout-btn" type="button" data-i18n="logout" title="Sign Out"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+            </div>
+        </div>
+        <div class="cart-icon" role="button" tabindex="0" aria-label="Open shopping cart">
+            <svg class="cart-logo" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2Zm10 0c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2ZM7.17 14h9.66c.75 0 1.4-.41 1.74-1.03L21 7H7.42L6.7 5H3v2h2.3l3.6 7.59-1.35 2.44C7.16 17.37 7.8 18 8.54 18H19v-2H8.54l1.1-2Z"/></svg>
+            <div class="cart-text-group">
+                <span class="cart-label" data-i18n="cart">Cart</span>
+                <span class="cart-subtext">Order &amp; track</span>
+            </div>
+            <span class="badge">0</span>
+        </div>
+    </nav>
+
+    <!-- Instagram-Style Story Highlights / Flash Drops Bar -->
+    <section class="stories-bar-section" aria-label="Featured Story Drops">
+        <div class="stories-track">
+            <button class="story-item" type="button" onclick="RN.filterByStory('all', '🔥 Flash 20% Off')">
+                <div class="story-ring live-ring">
+                    <img class="story-avatar" src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=150" alt="Flash Drops">
+                </div>
+                <span class="story-label">⚡ Flash Sale</span>
+            </button>
+            <button class="story-item" type="button" onclick="RN.filterByStory('men', '👔 Men\'s Style')">
+                <div class="story-ring">
+                    <img class="story-avatar" src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=150" alt="Men's Edit">
+                </div>
+                <span class="story-label">👔 Men's Edit</span>
+            </button>
+            <button class="story-item" type="button" onclick="RN.filterByStory('women', '👗 Women\'s Glam')">
+                <div class="story-ring">
+                    <img class="story-avatar" src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=150" alt="Women's Glam">
+                </div>
+                <span class="story-label">👗 Women's Glam</span>
+            </button>
+            <button class="story-item" type="button" onclick="RN.filterByStory('children', '👶 Kids Fun')">
+                <div class="story-ring">
+                    <img class="story-avatar" src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?q=80&w=150" alt="Kids Trend">
+                </div>
+                <span class="story-label">👶 Kids Trend</span>
+            </button>
+            <button class="story-item" type="button" onclick="RN.filterByStory('bestsellers', '⭐ Best Sellers')">
+                <div class="story-ring">
+                    <img class="story-avatar" src="https://images.unsplash.com/photo-1520975958225-2d4fcbf0d3e8?q=80&w=150" alt="Bestsellers">
+                </div>
+                <span class="story-label">⭐ Viral Hits</span>
+            </button>
+            <button class="story-item" type="button" onclick="RN.filterByStory('summer', '🌿 Summer Linen')">
+                <div class="story-ring">
+                    <img class="story-avatar" src="https://images.unsplash.com/photo-1520975916090-5d2cfcf4b6b8?q=80&w=150" alt="Summer Vibe">
+                </div>
+                <span class="story-label">🌿 Summer Vibe</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Auth Modal -->
+    <div class="auth-modal" aria-hidden="true" role="dialog" aria-labelledby="authModalTitle">
+        <div class="auth-modal-inner">
+            <div class="auth-modal-header">
+                <h2 class="auth-modal-title" id="authModalTitle">Create Account</h2>
+                <button class="auth-close-btn" type="button" aria-label="Close">&times;</button>
+            </div>
+            <div class="auth-tabs" role="tablist">
+                <button class="auth-tab is-active" type="button" data-auth-tab="signup" role="tab">Sign Up</button>
+                <button class="auth-tab" type="button" data-auth-tab="login" role="tab">Login</button>
+            </div>
+            <form class="auth-form signup-form" id="signupForm">
+                <div class="auth-field"><label for="signupName">Full Name</label><input id="signupName" type="text" required placeholder="Your name"></div>
+                <div class="auth-field"><label for="signupEmail">Email</label><input id="signupEmail" type="email" required placeholder="you@email.com"></div>
+                <div class="auth-field"><label for="signupPhone">Phone</label><input id="signupPhone" type="tel" placeholder="98XXXXXXXX"></div>
+                <div class="auth-field"><label for="signupPassword">Password</label><input id="signupPassword" type="password" required minlength="6" placeholder="Min 6 characters"></div>
+                <div class="auth-field"><label for="signupConfirm">Confirm Password</label><input id="signupConfirm" type="password" required minlength="6"></div>
+                <p class="auth-message" aria-live="polite"></p>
+                <button class="auth-submit-btn" type="submit">Create Account</button>
+            </form>
+            <form class="auth-form login-form is-hidden" id="loginForm">
+                <div class="auth-field"><label for="loginEmail">Email</label><input id="loginEmail" type="email" required></div>
+                <div class="auth-field"><label for="loginPassword">Password</label><input id="loginPassword" type="password" required></div>
+                <p class="auth-message" aria-live="polite"></p>
+                <button class="auth-submit-btn" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Filter Panel -->
+    <div class="filter-panel" aria-hidden="true" role="dialog" aria-label="Product filters">
+        <div class="filter-panel-inner">
+            <div class="filter-panel-header">
+                <div class="filter-panel-title">Filters</div>
+                <button class="filter-close-btn" type="button" aria-label="Close">&times;</button>
+            </div>
+            <div class="filter-row">
+                <label class="filter-label" for="filterCategory">Category</label>
+                <select id="filterCategory" class="filter-select">
+                    <option value="">All Categories</option>
+                    <option value="men">Men</option>
+                    <option value="women">Women</option>
+                    <option value="children">Children</option>
+                </select>
+            </div>
+            <div class="filter-row">
+                <label class="filter-label" for="priceMin">Min Price</label>
+                <input id="priceMin" class="filter-input" type="number" min="0" step="1" placeholder="0">
+            </div>
+            <div class="filter-row">
+                <label class="filter-label" for="priceMax">Max Price</label>
+                <input id="priceMax" class="filter-input" type="number" min="0" step="1" placeholder="99999">
+            </div>
+            <div class="filter-row">
+                <label class="filter-label" for="sortBy">Sort</label>
+                <select id="sortBy" class="filter-select">
+                    <option value="default">Default</option>
+                    <option value="priceAsc">Price: Low to High</option>
+                    <option value="priceDesc">Price: High to Low</option>
+                    <option value="newest">Newest</option>
+                    <option value="popular">Popularity</option>
+                    <option value="bestRated">Best Rated</option>
+                    <option value="nameAsc">Name: A to Z</option>
+                    <option value="nameDesc">Name: Z to A</option>
+                </select>
+            </div>
+            <div class="filter-actions">
+                <button class="filter-apply-btn" type="button">Apply</button>
+                <button class="filter-reset-btn" type="button">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <header class="hero reveal-on-scroll">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Birgunj's Finest Fashion</p>
+            <h1>Style Defined by You</h1>
+            <p class="hero-subtitle">Discover curated collections for every occasion — from everyday essentials to statement pieces.</p>
+            <div class="hero-cta">
+                <button class="btn btn-primary" data-scroll="#men"><span data-i18n="shopNow">Shop Now</span> <i class="fa-solid fa-arrow-right"></i></button>
+                <button class="btn btn-outline" data-scroll="#women"><span data-i18n="exploreWomen">Explore Women</span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured -->
+    <section class="featured-section reveal-on-scroll" id="featured">
+        <div class="section-header">
+            <h2 data-i18n="featured">Featured</h2>
+            <p>Handpicked styles our customers love most</p>
+        </div>
+        <div class="product-grid" id="featuredGrid"></div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="featured-section alt reveal-on-scroll" id="newArrivals">
+        <div class="section-header">
+            <h2 data-i18n="newArrivals">New Arrivals</h2>
+            <p>Fresh drops — be the first to wear them</p>
+        </div>
+        <div class="product-grid" id="newArrivalsGrid"></div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="featured-section reveal-on-scroll" id="bestSellers">
+        <div class="section-header">
+            <h2 data-i18n="bestSellers">Best Sellers</h2>
+            <p>Top-rated favorites this season</p>
+        </div>
+        <div class="product-grid" id="bestSellersGrid"></div>
+    </section>
+
+    <!-- Recently Viewed -->
+    <section class="featured-section alt reveal-on-scroll is-hidden" id="recentlyViewedSection">
+        <div class="section-header">
+            <h2>Recently Viewed</h2>
+        </div>
+        <div class="product-grid" id="recentlyViewedGrid"></div>
+    </section>
+
+    <!-- Main Products -->
+    <section class="products reveal-on-scroll">
+        <h2>Men &amp; Women Collections</h2>
+        <div class="category-section" id="men">
+            <h3 class="category-title">Men</h3>
+            <div class="product-grid" id="menGrid"></div>
+        </div>
+        <div class="category-section" id="women">
+            <h3 class="category-title">Women</h3>
+            <div class="product-grid" id="womenGrid"></div>
+        </div>
+        <div class="category-section" id="children">
+            <h3 class="category-title">Children</h3>
+            <div class="product-grid" id="childrenGrid"></div>
+        </div>
+    </section>
+
+    <!-- Collections -->
+    <section class="collections reveal-on-scroll" id="collections">
+        <h2>Collections</h2>
+        <div class="collections-controls" role="group" aria-label="Collections filter">
+            <button class="collection-filter is-active" data-filter="all">Show All</button>
+            <button class="collection-filter" data-filter="new">New Arrivals</button>
+            <button class="collection-filter" data-filter="bestsellers">Best Sellers</button>
+            <button class="collection-filter" data-filter="kids">Kids</button>
+        </div>
+    </section>
+
+    <!-- Wishlist Section -->
+    <section class="wishlist-section reveal-on-scroll" id="wishlistSection">
+        <div class="section-header">
+            <h2 data-i18n="wishlist">Wishlist</h2>
+            <p>Save items you love for later</p>
+        </div>
+        <div class="product-grid" id="wishlistGrid"></div>
+        <p class="wishlist-empty is-hidden">Your wishlist is empty. Tap the heart on any product to save it.</p>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials reveal-on-scroll">
+        <div class="section-header">
+            <h2 data-i18n="testimonials">What Our Customers Say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <blockquote class="testimonial-card">
+                <div class="stars" aria-label="5 stars">★★★★★</div>
+                <p>"Amazing quality and fast delivery in Birgunj. The denim jacket fits perfectly!"</p>
+                <footer>— Rajan K., Regular Customer</footer>
+            </blockquote>
+            <blockquote class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Best readymade store in town. Great variety for men and women at fair prices."</p>
+                <footer>— Priya S., Birgunj</footer>
+            </blockquote>
+            <blockquote class="testimonial-card">
+                <div class="stars">★★★★☆</div>
+                <p>"Love the kids collection! Soft fabrics and cute designs. Will shop again."</p>
+                <footer>— Anuj M., Parent</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Instagram Gallery -->
+    <section class="instagram-section reveal-on-scroll">
+        <div class="section-header">
+            <h2><i class="fa-brands fa-instagram"></i> @rnreadymade</h2>
+            <p>Follow us for style inspiration</p>
+        </div>
+        <div class="instagram-grid">
+            <a href="#" class="instagram-item" aria-label="Instagram photo 1"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=400" alt="Fashion look 1" loading="lazy"></a>
+            <a href="#" class="instagram-item"><img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?q=80&w=400" alt="Fashion look 2" loading="lazy"></a>
+            <a href="#" class="instagram-item"><img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=400" alt="Fashion look 3" loading="lazy"></a>
+            <a href="#" class="instagram-item"><img src="https://images.unsplash.com/photo-1520975916090-5d2cfcf4b6b8?q=80&w=400" alt="Fashion look 4" loading="lazy"></a>
+            <a href="#" class="instagram-item"><img src="https://images.unsplash.com/photo-1495121605193-b116b5b9c5d9?q=80&w=400" alt="Fashion look 5" loading="lazy"></a>
+            <a href="#" class="instagram-item"><img src="https://images.unsplash.com/photo-1520975916090-3b7b5bfcf5a5?q=80&w=400" alt="Fashion look 6" loading="lazy"></a>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section reveal-on-scroll" id="faq">
+        <div class="section-header">
+            <h2 data-i18n="faq">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false">What are your delivery times?</button>
+                <div class="faq-answer"><p>We deliver within Birgunj in 2–3 business days and across Nepal in 3–5 business days.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false">What is your return policy?</button>
+                <div class="faq-answer"><p>Eligible items can be returned within 7 days in original condition with tags attached.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false">Which payment methods do you accept?</button>
+                <div class="faq-answer"><p>We accept Cash on Delivery, eSewa, Khalti, and card payments at checkout.</p></div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question" type="button" aria-expanded="false">Is shipping free?</button>
+                <div class="faq-answer"><p>Yes! Free shipping on all orders above Rs. 5,000. Standard shipping is Rs. 150.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Info & Contact -->
+    <section class="store-info reveal-on-scroll" id="contact">
+        <h2>Store Information</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3><i class="fa-solid fa-user"></i> Owner Details</h3>
+                <p><strong>Owner:</strong> R.N Readymade</p>
+                <p><strong>Manager:</strong> Surendra Prasad Sah</p>
+                <p><strong>Support:</strong> <a href="mailto:support@rnreadymade.com">support@rnreadymade.com</a></p>
+            </div>
+            <div class="info-card">
+                <h3><i class="fa-solid fa-location-dot"></i> Address</h3>
+                <p>R.N Readymade, Main Road Ghantaghar<br>Birgunj, Parsa — 44300</p>
+                <p><strong>Phone:</strong> <a href="tel:+9779845266990">+977 9845266990</a></p>
+            </div>
+            <div class="info-card">
+                <h3><i class="fa-solid fa-clock"></i> Shop Hours</h3>
+                <p>Mon–Sat: 10:00 AM – 8:00 PM</p>
+                <p>Delivery: 2–5 business days</p>
+                <p>Returns: 7-day on eligible items</p>
+            </div>
+        </div>
+
+        <div class="contact-map-grid">
+            <form class="contact-form" id="contactForm" aria-label="Contact form">
+                <h3 data-i18n="contact">Contact Us</h3>
+                <div class="auth-field"><label for="contactName">Name</label><input id="contactName" name="name" type="text" required></div>
+                <div class="auth-field"><label for="contactEmail">Email</label><input id="contactEmail" name="email" type="email" required></div>
+                <div class="auth-field"><label for="contactMessage">Message</label><textarea id="contactMessage" name="message" rows="4" required></textarea></div>
+                <p class="contact-msg" aria-live="polite"></p>
+                <button type="submit" class="auth-submit-btn">Send Message</button>
+            </form>
+            <div class="map-embed">
+                <iframe title="R.N Readymade location on Google Maps" src="https://maps.google.com/maps?q=Ghantaghar+Birgunj+Nepal&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section reveal-on-scroll">
+        <div class="newsletter-inner">
+            <h2 data-i18n="newsletter">Join Our Newsletter</h2>
+            <p>Get exclusive offers and new arrival alerts</p>
+            <form id="newsletterForm" class="newsletter-form" aria-label="Newsletter subscription">
+                <input type="email" required placeholder="your@email.com" aria-label="Email address">
+                <button type="submit">Subscribe</button>
+            </form>
+            <p class="newsletter-msg" aria-live="polite"></p>
+        </div>
+    </section>
+
+    <!-- Orders -->
+    <section class="order-tracking-section" id="userOrdersSection">
+        <div class="order-tracking-header">
+            <h2>Your Orders</h2>
+            <p>Track your recent deliveries and order status here.</p>
+        </div>
+    <!-- Recently Viewed Section -->
+    <section class="recently-viewed-section" id="recentlyViewedSection" style="display:none;">
+        <div class="section-header">
+            <h2>Recently Viewed</h2>
+            <p>Pick up right where you left off</p>
+        </div>
+        <div class="recent-grid" id="recentlyViewedGrid"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-brand">R.N <span>Readymade</span></div>
+                <p class="footer-tagline">Premium readymade fashion since Birgunj.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <a href="#men">Men</a>
+                <a href="#women">Women</a>
+                <a href="#children">Children</a>
+                <a href="#collections">Collections</a>
+            </div>
+            <div class="footer-col">
+                <h4>Help</h4>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+                <a href="checkout.html">Checkout</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© <span class="footer-year">2026</span> R.N Readymade. <span data-i18n="footerRights">All rights reserved.</span></span>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart-sidebar" aria-label="Shopping cart">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="cart-close" aria-label="Close cart">&times;</button>
+        </div>
+        <div class="cart-body">
+            <ul class="cart-items"></ul>
+            <div class="cart-empty">Your cart is empty.</div>
+            <div class="cart-coupon">
+                <input type="text" id="couponInput" placeholder="Coupon code" aria-label="Coupon code">
+                <button type="button" id="applyCouponBtn">Apply</button>
+            </div>
+            <p class="coupon-msg" aria-live="polite"></p>
+            <div class="cart-breakdown">
+                <div class="cart-line"><span data-i18n="subtotal">Subtotal</span><span class="cart-subtotal">Rs. 0</span></div>
+                <div class="cart-line"><span data-i18n="discount">Discount</span><span class="cart-discount">Rs. 0</span></div>
+                <div class="cart-line"><span data-i18n="shipping">Shipping</span><span class="cart-shipping">Rs. 0</span></div>
+                <div class="cart-line"><span data-i18n="tax">Tax (13%)</span><span class="cart-tax">Rs. 0</span></div>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span data-i18n="total">Total</span>
+                <span class="cart-total-amount">Rs. 0</span>
+            </div>
+            <button class="cart-checkout-btn" data-i18n="checkout">Checkout</button>
+            <button class="cart-clear-btn">Clear Cart</button>
+        </div>
+    </aside>
+    <div class="cart-backdrop"></div>
+
+    <!-- Payment Modal (legacy quick checkout) -->
+    <div class="payment-modal" aria-hidden="true" role="dialog">
+        <div class="payment-modal-inner">
+            <div class="payment-header">
+                <h2>Pay with eSewa</h2>
+                <button class="payment-close-btn" type="button" aria-label="Close">&times;</button>
+            </div>
+            <div class="payment-body">
+                <div class="payment-summary">
+                    <p>Order Total: <strong class="payment-total">Rs. 0</strong></p>
+                    <ul class="payment-items"></ul>
+                </div>
+                <div class="payment-qr-section">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=eSewa" alt="eSewa QR Code" class="payment-qr" loading="lazy">
+                    <div class="payment-merchant">
+                        <p><strong>Amrit Prasad Sah</strong></p>
+                        <p>eSewa: <strong>9829192619</strong></p>
+                    </div>
+                </div>
+                <form id="paymentForm" class="payment-form">
+                    <div class="auth-field"><label for="txnId">eSewa Transaction ID</label><input id="txnId" type="text" required></div>
+                    <div class="auth-field"><label for="payerName">Your Name</label><input id="payerName" type="text" required></div>
+                    <div class="auth-field"><label for="payerPhone">Your Phone</label><input id="payerPhone" type="tel" required></div>
+                    <div class="auth-field full-width"><label for="deliveryAddress">Delivery Address</label><textarea id="deliveryAddress" rows="3" required></textarea></div>
+                    <div class="auth-field"><label for="deliveryCity">City</label><input id="deliveryCity" type="text" required placeholder="Birgunj"></div>
+                    <div class="auth-field"><label for="deliveryState">State</label><input id="deliveryState" type="text" required placeholder="Parsa"></div>
+                    <div class="auth-field"><label for="deliveryZip">Postal Code</label><input id="deliveryZip" type="text" required placeholder="44300"></div>
+                    <div class="auth-field full-width"><label for="deliveryLandmark">Landmark (optional)</label><input id="deliveryLandmark" type="text"></div>
+                    <p class="auth-message payment-msg" aria-live="polite"></p>
+                    <button type="submit" class="auth-submit-btn">Confirm Payment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div class="product-detail-modal" aria-hidden="true" role="dialog">
+        <div class="product-detail-inner">
+            <div class="detail-header">
+                <div>
+                    <h2 class="detail-name"></h2>
+                    <div class="detail-meta">
+                        <span class="detail-rating"></span>
+                        <span class="detail-review-count"></span>
+                        <span class="detail-sold-month"></span>
+                    </div>
+                </div>
+                <button class="detail-close-btn" type="button" aria-label="Close">&times;</button>
+            </div>
+            <div class="detail-body">
+                <div class="detail-gallery">
+                    <div class="detail-main-image zoom-container"><img src="" alt="Product image"></div>
+                    <div class="detail-thumbs"></div>
+                </div>
+                <div class="detail-info">
+                    <div class="detail-price-block">
+                        <span class="detail-price"></span>
+                        <span class="detail-discount"></span>
+                        <span class="detail-stock-status"></span>
+                    </div>
+                    <p class="detail-description"></p>
+                    <div class="detail-tags"></div>
+                    <div class="detail-options">
+                        <div class="detail-colors"><h3>Colors</h3><div class="detail-color-list"></div></div>
+                        <div class="detail-sizes">
+                            <div class="detail-sizes-header">
+                                <h3>Sizes</h3>
+                                <button type="button" class="size-guide-link-btn" id="openSizeGuideBtn">
+                                    <i class="fa-solid fa-ruler-horizontal"></i> Size Guide
+                                </button>
+                            </div>
+                            <div class="detail-size-list"></div>
+                        </div>
+                    </div>
+
+                    <!-- Quantity & Action Buttons -->
+                    <div class="detail-qty-row">
+                        <label for="detailQtyInput">Quantity:</label>
+                        <div class="cart-qty-controls detail-qty-ctrl">
+                            <button type="button" class="cart-qty-btn" id="detailQtyMinus">-</button>
+                            <input type="number" id="detailQtyInput" value="1" min="1" max="99" readonly>
+                            <button type="button" class="cart-qty-btn" id="detailQtyPlus">+</button>
+                        </div>
+                    </div>
+
+                    <div class="detail-action-row">
+                        <button type="button" class="detail-add-to-cart btn btn-primary">
+                            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+                        </button>
+                        <button type="button" class="detail-buy-now btn" id="detailBuyNowBtn">
+                            <i class="fa-solid fa-bolt"></i> Buy Now
+                        </button>
+                        <button type="button" class="detail-wishlist-btn icon-btn" aria-label="Add to wishlist" title="Wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <button type="button" class="detail-compare-btn icon-btn" aria-label="Compare" title="Compare">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </button>
+                        <button type="button" class="detail-share-btn icon-btn" id="detailShareBtn" aria-label="Share" title="Share Product">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </button>
+                    </div>
+
+                    <!-- Delivery Estimator Widget -->
+                    <div class="detail-delivery-checker">
+                        <div class="delivery-check-header">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <span>Check Delivery &amp; Shipping</span>
+                        </div>
+                        <div class="delivery-check-input-wrap">
+                            <input type="text" id="deliveryCityInput" placeholder="Enter City/District (e.g. Birgunj, Kathmandu)" value="Birgunj">
+                            <button type="button" id="checkDeliveryBtn">Check</button>
+                        </div>
+                        <div id="deliveryCheckResult" class="delivery-check-result">
+                            <i class="fa-solid fa-circle-check" style="color:#27ae60"></i>
+                            <span><strong>Birgunj:</strong> Delivered in 24–48 Hours · <strong>Free</strong> for orders over Rs. 5,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Reviews -->
+            <div class="detail-reviews">
+                <div class="reviews-header-wrap">
+                    <h3>Customer Reviews</h3>
+                    <div class="reviews-rating-summary" id="reviewsRatingSummary"></div>
+                </div>
+                <ul class="review-list"></ul>
+                <form class="review-form" id="reviewForm">
+                    <h4>Write a Review</h4>
+                    <div class="auth-field"><label for="reviewName">Your Name</label><input id="reviewName" type="text" required placeholder="e.g. Rajan Sah"></div>
+                    <div class="auth-field">
+                        <label for="reviewRating">Rating</label>
+                        <select id="reviewRating" required>
+                            <option value="5">5 ★★★★★ (Excellent)</option>
+                            <option value="4">4 ★★★★☆ (Good)</option>
+                            <option value="3">3 ★★★☆☆ (Average)</option>
+                            <option value="2">2 ★★☆☆☆ (Below Average)</option>
+                            <option value="1">1 ★☆☆☆☆ (Poor)</option>
+                        </select>
+                    </div>
+                    <div class="auth-field"><label for="reviewComment">Comment</label><textarea id="reviewComment" rows="3" required placeholder="Share your experience with fabric, fit, and style..."></textarea></div>
+                    <button type="submit" class="auth-submit-btn"><i class="fa-solid fa-pen-nib"></i> Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compare Modal -->
+    <div class="compare-modal" aria-hidden="true" role="dialog" aria-label="Product comparison">
+        <div class="compare-modal-inner">
+            <div class="compare-modal-header">
+                <h2>Compare Products</h2>
+                <button class="compare-modal-close" type="button" aria-label="Close">&times;</button>
+            </div>
+            <div class="compare-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Compare Bar -->
+    <div class="compare-bar" aria-live="polite"></div>
+
+    <!-- Wishlist Slide-Over Drawer -->
+    <div class="rn-drawer" id="wishlistDrawer" aria-hidden="true" role="dialog" aria-label="My Wishlist">
+        <div class="drawer-header">
+            <h3><i class="fa-solid fa-heart" style="color:#e74c3c"></i> My Wishlist</h3>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <span class="drawer-count-badge" id="wishlistDrawerCount">0 items</span>
+                <button class="drawer-close-btn" id="wishlistDrawerClose" type="button" aria-label="Close wishlist">&times;</button>
+            </div>
+        </div>
+        <div class="drawer-body" id="wishlistDrawerList"></div>
+        <div class="drawer-footer" id="wishlistDrawerFooter" style="display:none;">
+            <button class="drawer-primary-btn" id="wishlistMoveAllBtn" type="button">
+                <i class="fa-solid fa-bag-shopping"></i> Add All to Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Orders Tracking Hub Drawer -->
+    <div class="rn-drawer" id="ordersDrawer" aria-hidden="true" role="dialog" aria-label="My Orders">
+        <div class="drawer-header">
+            <h3><i class="fa-solid fa-box" style="color:var(--color-accent)"></i> My Orders</h3>
+            <div style="display:flex;align-items:center;gap:10px;">
+                <span class="drawer-count-badge" id="ordersDrawerCount">0 orders</span>
+                <button class="drawer-close-btn" id="ordersDrawerClose" type="button" aria-label="Close orders">&times;</button>
+            </div>
+        </div>
+        <div class="drawer-body">
+            <div class="orders-filter-tabs">
+                <button class="orders-filter-tab active" data-filter="all" type="button">All Orders</button>
+                <button class="orders-filter-tab" data-filter="active" type="button">In Transit 🚚</button>
+                <button class="orders-filter-tab" data-filter="delivered" type="button">Delivered ✓</button>
+            </div>
+            <div id="ordersDrawerList"></div>
+        </div>
+    </div>
+
+    <!-- User Profile & Lifestyle Hub Modal -->
+    <div class="profile-modal" id="profileModal" aria-hidden="true" role="dialog" aria-label="User Profile & Settings">
+        <div class="profile-modal-inner">
+            <div class="profile-cover">
+                <button class="profile-close-btn" id="profileModalClose" type="button" aria-label="Close profile">&times;</button>
+            </div>
+            <div class="profile-header-content">
+                <div class="profile-avatar-wrap">
+                    <div class="profile-big-avatar" id="profileAvatarLetter">U</div>
+                    <div class="profile-user-details">
+                        <h2 id="profileUserName">Member</h2>
+                        <div class="profile-user-meta">
+                            <span id="profileUserEmail">user@example.com</span>
+                            <span id="profileUserPhone">98XXXXXXXX</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-tier-badge" id="profileTierBadge">Gold VIP 👑</div>
+            </div>
+
+            <!-- Profile Nav Tabs -->
+            <div class="profile-nav-tabs">
+                <button class="profile-tab-btn active" data-tab="overview" type="button"><i class="fa-solid fa-crown"></i> Rewards &amp; Club</button>
+                <button class="profile-tab-btn" data-tab="addresses" type="button"><i class="fa-solid fa-map-location-dot"></i> Address Book</button>
+                <button class="profile-tab-btn" data-tab="settings" type="button"><i class="fa-solid fa-gear"></i> Settings</button>
+            </div>
+
+            <!-- Tab 1: Overview & RN Coins -->
+            <div class="profile-tab-content active" id="profileTab_overview">
+                <div class="rewards-hero-card">
+                    <div class="rewards-coin-balance">
+                        <div class="coin-icon-gold"><i class="fa-solid fa-coins"></i></div>
+                        <div class="coin-numbers">
+                            <span class="coin-count-big" id="profileCoinCount">150</span>
+                            <span class="coin-desc-label">RN Fashion Coins (Rs. 150 Value)</span>
+                        </div>
+                    </div>
+                    <button class="checkin-btn" id="profileCheckinBtn" type="button">
+                        <i class="fa-solid fa-gift"></i> Claim Daily +20 Coins
+                    </button>
+                </div>
+
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:14px;margin-bottom:24px;">
+                    <div style="background:var(--color-bg);padding:14px;border-radius:12px;border:1px solid var(--color-border);text-align:center;">
+                        <span style="font-size:0.75rem;color:var(--color-muted);text-transform:uppercase;font-weight:700;">Check-in Streak</span>
+                        <h3 style="font-size:1.4rem;color:var(--color-primary);margin:4px 0 0;" id="profileStreakDays">3 Days 🔥</h3>
+                    </div>
+                    <div style="background:var(--color-bg);padding:14px;border-radius:12px;border:1px solid var(--color-border);text-align:center;">
+                        <span style="font-size:0.75rem;color:var(--color-muted);text-transform:uppercase;font-weight:700;">Free Delivery Perk</span>
+                        <h3 style="font-size:1.4rem;color:#27ae60;margin:4px 0 0;">Unlocked 🎉</h3>
+                    </div>
+                </div>
+
+                <h4 class="reward-history-title">Coins &amp; Rewards Activity</h4>
+                <div id="profileRewardsHistory"></div>
+            </div>
+
+            <!-- Tab 2: Address Book -->
+            <div class="profile-tab-content" id="profileTab_addresses">
+                <div class="address-book-grid" id="addressBookList"></div>
+                
+                <button class="address-accordion-toggle" id="toggleNewAddrBtn" type="button">
+                    <i class="fa-solid fa-plus-circle"></i> Add New Delivery Address
+                </button>
+
+                <div class="address-form-collapse" id="newAddressCollapse">
+                    <form id="newAddressForm" style="background:var(--color-bg);padding:20px;border-radius:12px;border:1px solid var(--color-border);">
+                        <div class="form-row">
+                            <div class="auth-field">
+                                <label for="newAddrType">Address Type</label>
+                                <select id="newAddrType">
+                                    <option value="Home">Home 🏠</option>
+                                    <option value="Office">Office 🏢</option>
+                                    <option value="Other">Other 📍</option>
+                                </select>
+                            </div>
+                            <div class="auth-field">
+                                <label for="newAddrRecipient">Full Name</label>
+                                <input type="text" id="newAddrRecipient" required placeholder="Recipient's Name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="auth-field">
+                                <label for="newAddrPhone">Contact Phone</label>
+                                <input type="tel" id="newAddrPhone" required placeholder="98XXXXXXXX">
+                            </div>
+                            <div class="auth-field">
+                                <label for="newAddrCity">City / District</label>
+                                <input type="text" id="newAddrCity" required placeholder="Birgunj">
+                            </div>
+                        </div>
+                        <div class="auth-field">
+                            <label for="newAddrStreet">Street / Landmark</label>
+                            <input type="text" id="newAddrStreet" required placeholder="e.g. Maisthan Chowk, Ward 6">
+                        </div>
+                        <button type="submit" class="auth-submit-btn" style="margin-top:10px;">Save Address</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Tab 3: Settings -->
+            <div class="profile-tab-content" id="profileTab_settings">
+                <form id="profileSettingsForm">
+                    <div class="settings-group">
+                        <div class="settings-group-title">Personal Information</div>
+                        <div class="form-row">
+                            <div class="auth-field">
+                                <label for="settingEditName">Display Name</label>
+                                <input type="text" id="settingEditName" required>
+                            </div>
+                            <div class="auth-field">
+                                <label for="settingEditPhone">Phone Number</label>
+                                <input type="tel" id="settingEditPhone">
+                            </div>
+                        </div>
+                        <div class="auth-field">
+                            <label for="settingEditEmail">Email Address (Read-only)</label>
+                            <input type="email" id="settingEditEmail" disabled style="opacity:0.6;cursor:not-allowed;">
+                        </div>
+                        <button type="submit" class="auth-submit-btn" style="max-width:200px;margin-top:8px;">Update Details</button>
+                    </div>
+
+                    <div class="settings-group">
+                        <div class="settings-group-title">Preferences &amp; Notifications</div>
+                        <div class="settings-row">
+                            <div class="settings-info">
+                                <span>WhatsApp Order Tracking</span>
+                                <small>Receive instant dispatch alerts on WhatsApp</small>
+                            </div>
+                            <label class="rn-switch">
+                                <input type="checkbox" checked>
+                                <span class="rn-slider"></span>
+                            </label>
+                        </div>
+                        <div class="settings-row">
+                            <div class="settings-info">
+                                <span>Flash Sale Drops</span>
+                                <small>Notify me when 20%+ discount sales start</small>
+                            </div>
+                            <label class="rn-switch">
+                                <input type="checkbox" checked>
+                                <span class="rn-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Drawer Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+
+    <!-- Gen-Z Mobile Bottom Navigation Bar Dock -->
+    <nav class="mobile-bottom-nav" aria-label="Mobile Bottom Navigation">
+        <a href="#" class="mob-nav-item active">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </a>
+        <button class="mob-nav-item" type="button" onclick="document.querySelector('.search-input')?.focus(); window.scrollTo({top:0,behavior:'smooth'});">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Search</span>
+        </button>
+        <button class="mob-nav-item mobile-nav-wishlist" type="button">
+            <i class="fa-regular fa-heart"></i>
+            <span>Wishlist</span>
+            <span class="mobile-wishlist-count" style="display:none;">0</span>
+        </button>
+        <button class="mob-nav-item mobile-nav-orders" type="button">
+            <i class="fa-solid fa-box"></i>
+            <span>Orders</span>
+            <span class="mobile-orders-count" style="display:none;">0</span>
+        </button>
+        <button class="mob-nav-item" type="button" onclick="RN.openProfileModal()">
+            <i class="fa-regular fa-user"></i>
+            <span>Profile</span>
+        </button>
+    </nav>
+
+    <!-- Floating Actions -->
+    <button class="scroll-top-btn" type="button" aria-label="Scroll to top"><i class="fa-solid fa-chevron-up"></i></button>
+    <a href="https://wa.me/9779845266990" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <button class="live-chat-btn" type="button" aria-label="Live chat" title="Chat with R.N Style Concierge">
+        <i class="fa-solid fa-comments"></i>
+        <span class="live-chat-badge">1</span>
+    </button>
+
+    <script src="database.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/toast.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/features.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/drawers.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/api.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed | R.N Readymade</title>
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="premium.css">
+    <style>
+        /* ── Page ── */
+        .confirm-page {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 20px 100px;
+            text-align: center;
+        }
+
+        /* ── Success icon ── */
+        .confirm-icon-ring {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border: 4px solid #a5d6a7;
+            display: grid;
+            place-items: center;
+            margin: 0 auto 28px;
+            animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .confirm-icon-ring i {
+            font-size: 2.8rem;
+            color: #2e7d32;
+            animation: checkDraw 0.4s 0.3s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes checkDraw {
+            from { opacity: 0; transform: scale(0.5); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+
+        .confirm-page h1 {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            color: var(--color-primary);
+            margin-bottom: 10px;
+            animation: slideUp 0.5s 0.4s ease both;
+        }
+
+        .confirm-subtitle {
+            color: var(--color-muted);
+            font-size: 1rem;
+            margin-bottom: 32px;
+            animation: slideUp 0.5s 0.5s ease both;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(14px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Order ID chip ── */
+        .order-id-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--color-surface);
+            border: 1.5px solid var(--color-border);
+            border-radius: 99px;
+            padding: 8px 20px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 28px;
+            letter-spacing: 0.08em;
+            animation: slideUp 0.5s 0.55s ease both;
+        }
+
+        .order-id-chip i { color: var(--color-accent); }
+
+        /* ── Details card ── */
+        .confirm-details {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 28px 30px;
+            text-align: left;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-sm);
+            animation: slideUp 0.5s 0.65s ease both;
+        }
+
+        .confirm-details-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .confirm-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            padding: 9px 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.9rem;
+        }
+        .confirm-row:last-child { border-bottom: none; }
+        .confirm-row-label { color: var(--color-muted); flex-shrink: 0; }
+        .confirm-row-value { font-weight: 600; text-align: right; }
+
+        .confirm-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0 0;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            border-top: 2px solid var(--color-primary);
+            margin-top: 8px;
+        }
+
+        /* ── Items list ── */
+        .confirm-items-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin: 20px 0 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .confirm-items { list-style: none; margin-bottom: 0; }
+        .confirm-items li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--color-border);
+            font-size: 0.88rem;
+        }
+        .confirm-items li:last-child { border-bottom: none; }
+        .confirm-item-name { flex: 1; font-weight: 500; }
+        .confirm-item-qty { color: var(--color-muted); }
+        .confirm-item-price { font-weight: 700; }
+
+        /* ── Delivery timeline ── */
+        .delivery-timeline {
+            background: linear-gradient(135deg, var(--color-surface), rgba(184,123,60,0.04));
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-bottom: 24px;
+            text-align: left;
+            animation: slideUp 0.5s 0.75s ease both;
+        }
+
+        .delivery-timeline-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .timeline-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .timeline-step {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.88rem;
+        }
+
+        .timeline-dot {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .timeline-dot.done { background: #27ae60; color: #fff; }
+        .timeline-dot.current { background: var(--color-accent); color: #fff; animation: pulse 1.5s infinite; }
+        .timeline-dot.pending { background: var(--color-border); color: var(--color-muted); }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(184,123,60,0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(184,123,60,0); }
+        }
+
+        .timeline-step-info { flex: 1; }
+        .timeline-step-label { font-weight: 600; }
+        .timeline-step-desc { font-size: 0.78rem; color: var(--color-muted); }
+
+        /* ── Status pill ── */
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+        .status-pill.pending { background: #fff8e1; color: #f57f17; border: 1px solid #ffe082; }
+        .status-pill.processing { background: #e3f2fd; color: #1565c0; border: 1px solid #90caf9; }
+        .status-pill.shipped { background: #e0f2f1; color: #00695c; border: 1px solid #80cbc4; }
+        .status-pill.delivered { background: #e8f5e9; color: #2e7d32; border: 1px solid #a5d6a7; }
+
+        /* ── Action buttons ── */
+        .confirm-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+            animation: slideUp 0.5s 0.85s ease both;
+        }
+
+        .confirm-actions a, .confirm-actions button {
+            padding: 13px 26px;
+            border-radius: 99px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-shop {
+            background: var(--color-primary);
+            color: #fdfbf7;
+        }
+        .btn-shop:hover { background: var(--color-accent); }
+
+        .btn-track {
+            border: 1.5px solid var(--color-border) !important;
+            color: var(--color-primary);
+            background: transparent;
+        }
+        .btn-track:hover { border-color: var(--color-accent) !important; color: var(--color-accent); }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: #fff;
+        }
+        .btn-whatsapp:hover { background: #128C7E; }
+
+        /* ── Not found ── */
+        .confirm-not-found {
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .confirm-not-found i { font-size: 3rem; color: var(--color-border); margin-bottom: 20px; display: block; }
+        .confirm-not-found a { color: var(--color-accent); font-weight: 600; }
+
+        /* ── Confetti ── */
+        .confetti-wrapper {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: -15px;
+            animation: confettiFall linear forwards;
+        }
+
+        @keyframes confettiFall {
+            0%   { transform: translateY(0) rotateZ(0deg); opacity: 1; }
+            80%  { opacity: 1; }
+            100% { transform: translateY(105vh) rotateZ(720deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Confetti container -->
+    <div class="confetti-wrapper" id="confettiWrapper" aria-hidden="true"></div>
+
+    <div class="confirm-page" id="confirmContent">
+        <!-- Loading state -->
+        <p style="color:var(--color-muted)">Loading your order details…</p>
+    </div>
+
+    <script src="database.js"></script>
+    <script src="js/config.js"></script>
+    <script>
+    (function () {
+        // ── Get order ──
+        const params = new URLSearchParams(location.search);
+        const orderId = params.get('id');
+        let order = null;
+        try { order = JSON.parse(sessionStorage.getItem('rn_last_order')); } catch {}
+        if (!order && orderId) {
+            try { order = getOrders().find(o => o.orderId === orderId); } catch {}
+        }
+
+        const content = document.getElementById('confirmContent');
+
+        // ── Not found ──
+        if (!order) {
+            content.innerHTML = `
+                <div class="confirm-not-found">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <h2>Order not found</h2>
+                    <p>We couldn't locate order details. <a href="index.html">Return to store</a>.</p>
+                </div>`;
+            return;
+        }
+
+        // ── Helpers ──
+        const fmt = (n) => typeof formatPrice === 'function' ? formatPrice(n) : ('Rs. ' + Number(n).toLocaleString('en-NP'));
+        const statusMap = {
+            pending: { label: 'Pending Confirmation', cls: 'pending', icon: 'fa-clock' },
+            packed:  { label: 'Packed & Ready',       cls: 'pending', icon: 'fa-box' },
+            shipped: { label: 'Shipped',               cls: 'shipped', icon: 'fa-truck' },
+            'out-for-delivery': { label: 'Out for Delivery', cls: 'shipped', icon: 'fa-truck-fast' },
+            delivered: { label: 'Delivered',           cls: 'delivered', icon: 'fa-check-circle' },
+            processing: { label: 'Processing',         cls: 'processing', icon: 'fa-spinner' }
+        };
+        const statusInfo = statusMap[order.status] || statusMap.pending;
+        const paymentLabel = {
+            cod: 'Cash on Delivery',
+            esewa: 'eSewa',
+            khalti: 'Khalti',
+            card: 'Card'
+        }[order.paymentMethod || 'esewa'] || (order.paymentMethod || 'eSewa').toUpperCase();
+
+        const orderDate = new Date(order.date);
+        const estDelivery = new Date(orderDate);
+        estDelivery.setDate(estDelivery.getDate() + (order.city?.toLowerCase() === 'birgunj' ? 3 : 5));
+        const fmtDate = (d) => d.toLocaleDateString('en-NP', { weekday: 'short', day: 'numeric', month: 'short' });
+
+        const itemsHtml = (order.items || []).map(i => `
+            <li>
+                <span class="confirm-item-name">${i.name}</span>
+                <span class="confirm-item-qty">× ${i.qty}</span>
+                <span class="confirm-item-price">${fmt(i.price * i.qty)}</span>
+            </li>`).join('');
+
+        const deliveryAddr = [order.address, order.city, order.state, order.zipCode].filter(Boolean).join(', ');
+        const whatsappMsg = encodeURIComponent(
+            `Hi R.N Readymade! I just placed order ${order.orderId} worth ${fmt(order.total)}. Please confirm my order.`
+        );
+
+        content.innerHTML = `
+            <div class="confirm-icon-ring"><i class="fa-solid fa-check"></i></div>
+            <h1>Order Confirmed!</h1>
+            <p class="confirm-subtitle">Thank you, ${(order.customerName || 'Customer').split(' ')[0]}! 🎉 Your order is on its way.</p>
+
+            <div class="order-id-chip">
+                <i class="fa-solid fa-tag"></i>
+                Order ID: ${order.orderId}
+            </div>
+
+            <!-- Order Details -->
+            <div class="confirm-details">
+                <div class="confirm-details-title"><i class="fa-solid fa-receipt"></i> Order Details</div>
+
+                <div class="confirm-row">
+                    <span class="confirm-row-label">Date</span>
+                    <span class="confirm-row-value">${orderDate.toLocaleString('en-NP')}</span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-row-label">Payment</span>
+                    <span class="confirm-row-value">${paymentLabel}</span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-row-label">Status</span>
+                    <span class="confirm-row-value">
+                        <span class="status-pill ${statusInfo.cls}">
+                            <i class="fa-solid ${statusInfo.icon}"></i> ${statusInfo.label}
+                        </span>
+                    </span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-row-label">Delivery To</span>
+                    <span class="confirm-row-value">${deliveryAddr || '—'}</span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-row-label">Est. Delivery</span>
+                    <span class="confirm-row-value" style="color:var(--color-accent)">${fmtDate(estDelivery)}</span>
+                </div>
+
+                ${order.subtotal != null ? `
+                <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--color-border)">
+                    <div class="confirm-row"><span class="confirm-row-label">Subtotal</span><span class="confirm-row-value">${fmt(order.subtotal)}</span></div>
+                    ${order.discount ? `<div class="confirm-row"><span class="confirm-row-label">Discount</span><span class="confirm-row-value" style="color:#27ae60">−${fmt(order.discount)}</span></div>` : ''}
+                    <div class="confirm-row"><span class="confirm-row-label">Shipping</span><span class="confirm-row-value">${order.shipping === 0 ? 'Free' : fmt(order.shipping)}</span></div>
+                    <div class="confirm-row"><span class="confirm-row-label">Tax (13%)</span><span class="confirm-row-value">${fmt(order.tax)}</span></div>
+                </div>` : ''}
+
+                <div class="confirm-total-row">
+                    <span>Grand Total</span>
+                    <span>${fmt(order.total)}</span>
+                </div>
+
+                <div class="confirm-items-title"><i class="fa-solid fa-shirt"></i> Items Ordered</div>
+                <ul class="confirm-items">${itemsHtml}</ul>
+            </div>
+
+            <!-- Delivery Timeline -->
+            <div class="delivery-timeline">
+                <div class="delivery-timeline-title"><i class="fa-solid fa-truck-fast"></i> Delivery Tracking</div>
+                <div class="timeline-steps">
+                    <div class="timeline-step">
+                        <div class="timeline-dot done"><i class="fa-solid fa-check" style="font-size:0.7rem"></i></div>
+                        <div class="timeline-step-info">
+                            <div class="timeline-step-label">Order Placed</div>
+                            <div class="timeline-step-desc">${fmtDate(orderDate)}</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot current"><i class="fa-solid fa-box" style="font-size:0.7rem"></i></div>
+                        <div class="timeline-step-info">
+                            <div class="timeline-step-label">Processing & Packing</div>
+                            <div class="timeline-step-desc">We're preparing your order</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot pending"><i class="fa-solid fa-truck" style="font-size:0.7rem"></i></div>
+                        <div class="timeline-step-info">
+                            <div class="timeline-step-label">Shipped</div>
+                            <div class="timeline-step-desc">On the way to you</div>
+                        </div>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-dot pending"><i class="fa-solid fa-house" style="font-size:0.7rem"></i></div>
+                        <div class="timeline-step-info">
+                            <div class="timeline-step-label">Delivered</div>
+                            <div class="timeline-step-desc">Expected by ${fmtDate(estDelivery)}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="confirm-actions">
+                <a href="index.html" class="btn-shop"><i class="fa-solid fa-bag-shopping"></i> Continue Shopping</a>
+                <a href="index.html#userOrdersSection" class="btn-track"><i class="fa-solid fa-list"></i> My Orders</a>
+                <a href="https://wa.me/9779845266990?text=${whatsappMsg}" target="_blank" rel="noopener" class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+
+            <p style="font-size:0.8rem;color:var(--color-muted)">
+                A confirmation SMS will be sent to ${order.customerPhone || 'your phone'}.
+                Questions? <a href="https://wa.me/9779845266990" style="color:var(--color-accent)">Chat with us</a>.
+            </p>
+        `;
+
+        // ── Confetti ──────────────────────────────────────
+        const wrapper = document.getElementById('confettiWrapper');
+        const colors = ['#b87b3c', '#2e7d32', '#1565c0', '#6a1b9a', '#e65100', '#f9a825', '#c62828', '#00838f'];
+        for (let i = 0; i < 80; i++) {
+            const piece = document.createElement('div');
+            piece.className = 'confetti-piece';
+            const size = 6 + Math.random() * 8;
+            piece.style.cssText = `
+                left: ${Math.random() * 100}%;
+                width: ${size}px; height: ${size}px;
+                background: ${colors[Math.floor(Math.random() * colors.length)]};
+                border-radius: ${Math.random() > 0.5 ? '50%' : '2px'};
+                animation-duration: ${1.5 + Math.random() * 2}s;
+                animation-delay: ${Math.random() * 1.2}s;
+            `;
+            wrapper.appendChild(piece);
+        }
+        setTimeout(() => { wrapper.style.display = 'none'; }, 4000);
+
+    })();
+    </script>
+</body>
+</html>

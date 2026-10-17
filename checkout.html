@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | R.N Readymade</title>
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="premium.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar checkout-nav">
+        <a href="index.html" class="logo" aria-label="R.N Readymade Home">R.N <span>Readymade</span></a>
+        <a href="index.html" class="admin-btn outline" style="white-space:nowrap">&larr; Continue Shopping</a>
+    </nav>
+
+    <!-- Progress Stepper -->
+    <div class="checkout-stepper-bar">
+        <div class="checkout-stepper" id="checkoutStepper">
+            <div class="stepper-step done" id="stepCart">
+                <div class="stepper-dot"><i class="fa-solid fa-check" style="font-size:0.75rem"></i></div>
+                <span class="stepper-label">Cart</span>
+            </div>
+            <div class="stepper-step active" id="stepDetails">
+                <div class="stepper-dot">2</div>
+                <span class="stepper-label">Details</span>
+            </div>
+            <div class="stepper-step" id="stepPayment">
+                <div class="stepper-dot">3</div>
+                <span class="stepper-label">Payment</span>
+            </div>
+            <div class="stepper-step" id="stepConfirm">
+                <div class="stepper-dot">4</div>
+                <span class="stepper-label">Confirm</span>
+            </div>
+        </div>
+    </div>
+
+    <main class="checkout-page">
+        <div class="checkout-grid">
+
+            <!-- LEFT: Form -->
+            <section class="checkout-form-section">
+                <form id="checkoutForm" novalidate>
+
+                    <!-- Customer Details -->
+                    <div class="checkout-section-title">
+                        <i class="fa-solid fa-user"></i> Customer Details
+                    </div>
+                    <div class="form-row">
+                        <div class="auth-field">
+                            <label for="chkName">Full Name *</label>
+                            <input id="chkName" type="text" required minlength="2" placeholder="Your full name" autocomplete="name">
+                        </div>
+                        <div class="auth-field">
+                            <label for="chkEmail">Email *</label>
+                            <input id="chkEmail" type="email" required placeholder="you@email.com" autocomplete="email">
+                        </div>
+                    </div>
+                    <div class="auth-field" style="max-width:260px">
+                        <label for="chkPhone">Phone *</label>
+                        <input id="chkPhone" type="tel" required pattern="[0-9+\s-]{10,15}" placeholder="98XXXXXXXX" autocomplete="tel">
+                    </div>
+
+                    <!-- Delivery Address -->
+                    <div class="checkout-section-title" style="margin-top:28px">
+                        <i class="fa-solid fa-truck-fast"></i> Delivery Address
+                    </div>
+                    <div class="auth-field">
+                        <label for="chkAddress">Street Address *</label>
+                        <textarea id="chkAddress" rows="2" required minlength="5" placeholder="House/Building, Street, Area" autocomplete="street-address"></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="auth-field">
+                            <label for="chkCity">City *</label>
+                            <input id="chkCity" type="text" required value="Birgunj" autocomplete="address-level2">
+                        </div>
+                        <div class="auth-field">
+                            <label for="chkState">State *</label>
+                            <input id="chkState" type="text" required value="Parsa" autocomplete="address-level1">
+                        </div>
+                        <div class="auth-field">
+                            <label for="chkZip">Postal Code *</label>
+                            <input id="chkZip" type="text" required pattern="[0-9]{5}" value="44300" autocomplete="postal-code">
+                        </div>
+                    </div>
+                    <div class="auth-field">
+                        <label for="chkLandmark">Landmark <span style="color:var(--color-muted);font-weight:400">(optional)</span></label>
+                        <input id="chkLandmark" type="text" placeholder="e.g. Near Ghantaghar">
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="checkout-section-title" style="margin-top:28px">
+                        <i class="fa-solid fa-credit-card"></i> Payment Method
+                    </div>
+                    <div class="payment-options" role="radiogroup" aria-label="Payment method">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="cod" checked>
+                            <div class="payment-option-icon cod"><i class="fa-solid fa-money-bill-wave"></i></div>
+                            <div class="payment-option-info">
+                                <span class="payment-option-name">Cash on Delivery</span>
+                                <span class="payment-option-desc">Pay when your order arrives</span>
+                            </div>
+                            <span class="payment-badge">Popular</span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="esewa">
+                            <div class="payment-option-icon esewa"><i class="fa-solid fa-mobile-screen"></i></div>
+                            <div class="payment-option-info">
+                                <span class="payment-option-name">eSewa</span>
+                                <span class="payment-option-desc">Scan QR &amp; pay instantly</span>
+                            </div>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="khalti">
+                            <div class="payment-option-icon khalti"><i class="fa-solid fa-wallet"></i></div>
+                            <div class="payment-option-info">
+                                <span class="payment-option-name">Khalti</span>
+                                <span class="payment-option-desc">Digital wallet payment</span>
+                            </div>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="card">
+                            <div class="payment-option-icon card"><i class="fa-solid fa-credit-card"></i></div>
+                            <div class="payment-option-info">
+                                <span class="payment-option-name">Card</span>
+                                <span class="payment-option-desc">Visa / Mastercard</span>
+                            </div>
+                        </label>
+                    </div>
+
+                    <!-- eSewa QR -->
+                    <div class="digital-payment-box" id="esewaBox">
+                        <p style="font-size:0.82rem;color:var(--color-muted);margin-bottom:12px">Scan the QR code with your eSewa app to pay:</p>
+                        <img id="esewaQr" class="payment-qr-img" src="" alt="eSewa QR Code" loading="lazy">
+                        <div class="payment-merchant-info">
+                            <strong>Amrit Prasad Sah</strong>
+                            eSewa: <span>9829192619</span>
+                        </div>
+                        <div class="auth-field payment-txn-field">
+                            <label for="chkTxnId">eSewa Transaction ID *</label>
+                            <input id="chkTxnId" type="text" placeholder="Enter after payment">
+                        </div>
+                    </div>
+
+                    <!-- Khalti info -->
+                    <div class="khalti-info" id="khaltiBox">
+                        <p><strong>Pay via Khalti:</strong></p>
+                        <p>Send payment to Khalti number:</p>
+                        <p class="khalti-number">9829192619</p>
+                        <p style="font-size:0.8rem;color:var(--color-muted);margin-top:8px">After payment, enter your Transaction ID below.</p>
+                        <div class="auth-field payment-txn-field" style="margin-top:12px">
+                            <label for="chkKhaltiTxn">Khalti Transaction ID *</label>
+                            <input id="chkKhaltiTxn" type="text" placeholder="Enter after payment">
+                        </div>
+                    </div>
+
+                    <!-- Card fields (simple) -->
+                    <div class="digital-payment-box" id="cardBox">
+                        <p style="font-size:0.82rem;color:var(--color-muted);margin-bottom:12px">Enter your card details:</p>
+                        <div class="auth-field">
+                            <label for="chkCardNumber">Card Number</label>
+                            <input id="chkCardNumber" type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+                        </div>
+                        <div class="form-row">
+                            <div class="auth-field">
+                                <label for="chkCardExpiry">Expiry</label>
+                                <input id="chkCardExpiry" type="text" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="auth-field">
+                                <label for="chkCardCvv">CVV</label>
+                                <input id="chkCardCvv" type="text" placeholder="123" maxlength="4">
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="checkout-msg" aria-live="polite"></p>
+
+                    <button type="submit" class="auth-submit-btn checkout-submit" id="placeOrderBtn">
+                        <i class="fa-solid fa-lock"></i> Place Order Securely
+                    </button>
+
+                    <!-- Trust badges -->
+                    <div class="trust-badges">
+                        <span class="trust-badge"><i class="fa-solid fa-lock"></i> SSL Secured</span>
+                        <span class="trust-badge"><i class="fa-solid fa-shield-halved"></i> Safe Checkout</span>
+                        <span class="trust-badge"><i class="fa-solid fa-rotate-left"></i> 7-Day Returns</span>
+                        <span class="trust-badge"><i class="fa-solid fa-headset"></i> 24/7 Support</span>
+                    </div>
+                </form>
+            </section>
+
+            <!-- RIGHT: Order Summary -->
+            <aside class="checkout-summary">
+                <div class="checkout-summary-title">Order Summary</div>
+                <ul class="checkout-items" id="checkoutItems"></ul>
+
+                <div class="cart-coupon">
+                    <input type="text" id="checkoutCoupon" placeholder="Coupon code" aria-label="Coupon code">
+                    <button type="button" id="checkoutApplyCoupon">Apply</button>
+                </div>
+                <p class="checkout-msg" id="couponMsg" style="margin:0 0 12px" aria-live="polite"></p>
+
+                <div class="cart-breakdown">
+                    <div class="cart-line"><span>Subtotal</span><span id="sumSubtotal">Rs. 0</span></div>
+                    <div class="cart-line"><span>Discount</span><span id="sumDiscount">Rs. 0</span></div>
+                    <div class="cart-line"><span>Shipping</span><span id="sumShipping">Rs. 0</span></div>
+                    <div class="cart-line"><span>Tax (13%)</span><span id="sumTax">Rs. 0</span></div>
+                </div>
+
+                <div class="checkout-grand-total">
+                    <span>Grand Total</span>
+                    <span id="sumTotal">Rs. 0</span>
+                </div>
+
+                <p style="font-size:0.75rem;color:var(--color-muted);margin-top:14px;text-align:center">
+                    <i class="fa-solid fa-truck-fast" style="color:var(--color-accent)"></i>
+                    Free shipping on orders above Rs. 5,000
+                </p>
+            </aside>
+        </div>
+    </main>
+
+    <script src="database.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="checkout.js"></script>
+</body>
+</html>

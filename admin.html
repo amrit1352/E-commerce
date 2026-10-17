@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R.N Readymade | Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="admin-login-screen" id="loginScreen">
+        <div class="admin-login-box">
+            <h1>R.N Admin</h1>
+            <p class="admin-subtitle">Collection &amp; Stock Management</p>
+            <form id="adminLoginForm">
+                <div class="admin-field">
+                    <label for="adminId">Admin ID</label>
+                    <input id="adminId" type="text" required placeholder="Enter admin ID" autocomplete="username">
+                </div>
+                <div class="admin-field">
+                    <label for="adminPass">Password</label>
+                    <input id="adminPass" type="password" required placeholder="Enter password" autocomplete="current-password">
+                </div>
+                <p class="admin-msg" id="loginMsg"></p>
+                <button type="submit" class="admin-btn primary">Login</button>
+            </form>
+            <a href="index.html" class="back-link">&larr; Back to Store</a>
+        </div>
+    </div>
+
+    <div class="admin-panel is-hidden" id="adminPanel">
+        <header class="admin-header">
+            <div>
+                <h1>R.N Admin Panel</h1>
+                <p>Manage collections, products &amp; stock</p>
+            </div>
+            <div class="admin-header-actions">
+                <a href="index.html" class="admin-btn outline">View Store</a>
+                <button class="admin-btn outline" id="logoutAdminBtn" type="button">Logout</button>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <section class="admin-card">
+                <h2>Add New Product</h2>
+                <form id="addProductForm" class="admin-form-grid">
+                    <div class="admin-field">
+                        <label for="prodName">Product Name</label>
+                        <input id="prodName" type="text" required placeholder="e.g. Classic Denim Jacket">
+                    </div>
+                    <div class="admin-field">
+                        <label for="prodPrice">Price (Rs.)</label>
+                        <input id="prodPrice" type="number" min="0" step="1" required placeholder="e.g. 5999">
+                    </div>
+                    <div class="admin-field">
+                        <label for="prodCategory">Category</label>
+                        <select id="prodCategory" required>
+                            <option value="men">Men</option>
+                            <option value="women">Women</option>
+                            <option value="children">Children</option>
+                        </select>
+                    </div>
+                    <div class="admin-field">
+                        <label for="prodStock">Stock Qty</label>
+                        <input id="prodStock" type="number" min="0" step="1" required placeholder="e.g. 20">
+                    </div>
+                    <div class="admin-field full">
+                        <label for="prodImageUrls">Image URLs (one per line)</label>
+                        <textarea id="prodImageUrls" rows="3" placeholder="https://... or images/product.jpg"></textarea>
+                    </div>
+                    <div class="admin-field">
+                        <label for="prodImages">Upload images (optional)</label>
+                        <input id="prodImages" type="file" accept="image/*" multiple>
+                    </div>
+                    <div class="admin-field">
+                        <label for="prodSizes">Sizes (comma-separated, e.g. S,M,L)</label>
+                        <input id="prodSizes" type="text" placeholder="S,M,L">
+                    </div>
+                    <div class="admin-field full">
+                        <label for="prodColors">Colors (one per line or comma-separated, e.g. Red:#ff0000 or Red:#ff0000,Blue:#0000ff)</label>
+                        <textarea id="prodColors" rows="3" placeholder="Red:#ff0000
+Blue:#0000ff"></textarea>
+                    </div>
+                    <div class="admin-field">
+                        <label for="prodDiscount">Discount (%)</label>
+                        <input id="prodDiscount" type="number" min="0" max="99" step="1" placeholder="e.g. 10">
+                    </div>
+                    <div class="admin-field full">
+                        <label for="prodDescription">Description</label>
+                        <textarea id="prodDescription" rows="3" placeholder="Detailed description of the product"></textarea>
+                    </div>
+                    <div class="admin-field full">
+                        <label>Collections (select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" name="prodCollection" value="new"> New Arrivals</label>
+                            <label><input type="checkbox" name="prodCollection" value="bestsellers"> Best Sellers</label>
+                            <label><input type="checkbox" name="prodCollection" value="formal"> Formal</label>
+                            <label><input type="checkbox" name="prodCollection" value="summer"> Summer</label>
+                            <label><input type="checkbox" name="prodCollection" value="kids"> Kids</label>
+                        </div>
+                    </div>
+                    <div class="admin-field full">
+                        <button type="submit" class="admin-btn primary">Add to Database</button>
+                    </div>
+                </form>
+                <p class="admin-msg" id="addMsg"></p>
+            </section>
+
+            <section class="admin-card">
+                <div class="admin-card-header">
+                    <h2>Product Database</h2>
+                    <span class="stock-summary" id="stockSummary"></span>
+                </div>
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Stock</th>
+                                <th>Collections</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="admin-card">
+                <h2>Recent Orders</h2>
+                <div class="admin-table-wrap">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Total</th>
+                                <th>Txn ID</th>
+                                <th>Phone</th>
+                                <th>Delivery Address</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="database.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
